@@ -35,9 +35,9 @@ add_action(
         // Register article index.
         $settings = new \WpAlgolia\MyCompany\PostsIndexSettingsFactory();
         $recordsProvider = new \WpAlgolia\MyCompany\PostRecordsProvider();
-        $index = new \WpAlgolia\PostsIndex('posts', $algoliaClient, $settings->create(), $recordsProvider);
+        $index = new \WpAlgolia\PostsIndex('mycompany_posts', $algoliaClient, $settings->create(), $recordsProvider);
         new \WpAlgolia\MyCompany\PostChangeListener($index);
-        $indexRepository->add('posts', $index);
+        $indexRepository->add('mycompany_posts', $index);
 
 
 
