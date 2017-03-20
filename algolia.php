@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Algolia Integration Boilerplate
- * Description: This boilerplate provides an indexing pipeline Algolia.
+ * Description: Gives you a clean way to get started with indexing content into Algolia.
  * Version: 0.1.0
  * Author Name: Raymond Rutjes
  */
