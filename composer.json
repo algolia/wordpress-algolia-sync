@@ -1,0 +1,24 @@
+{
+    "name": "algolia/wordpress-plugin-boilerplate",
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "algolia/index": "dev-master",
+        "algolia/algoliasearch-client-php": "^1.14"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:algolia/php-index.git"
+        }
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-install-cmd": "bin/scope-deps.sh",
+        "post-update-cmd": "bin/scope-deps.sh"
+    }
+}

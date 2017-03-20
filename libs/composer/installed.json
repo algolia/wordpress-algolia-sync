@@ -1,0 +1,101 @@
+[
+    {
+        "name": "algolia/algoliasearch-client-php",
+        "version": "1.16.0",
+        "version_normalized": "1.16.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/algolia/algoliasearch-client-php.git",
+            "reference": "4a055ef86a68175d65385d67e546aed7d87b537d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/4a055ef86a68175d65385d67e546aed7d87b537d",
+            "reference": "4a055ef86a68175d65385d67e546aed7d87b537d",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.0",
+            "satooshi/php-coveralls": "0.6.*"
+        },
+        "time": "2017-02-28 10:20:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "AlgoliaSearch": "src/",
+                "AlgoliaSearch\\Tests": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Algolia Team",
+                "email": "contact@algolia.com"
+            },
+            {
+                "name": "Ryan T. Catlin",
+                "email": "ryan.catlin@gmail.com"
+            },
+            {
+                "name": "Jonathan H. Wage",
+                "email": "jonwage@gmail.com"
+            }
+        ],
+        "description": "Algolia Search API Client for PHP",
+        "homepage": "https://github.com/algolia/algoliasearch-client-php"
+    },
+    {
+        "name": "algolia/index",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git@github.com:algolia/php-index.git",
+            "reference": "b5496867cafda73629f62154ac6f4539ea4a1d94"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/algolia/php-index/zipball/b5496867cafda73629f62154ac6f4539ea4a1d94",
+            "reference": "b5496867cafda73629f62154ac6f4539ea4a1d94",
+            "shasum": ""
+        },
+        "require": {
+            "algolia/algoliasearch-client-php": "^1.13",
+            "php": "~5.3 || ^7.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0 | ~5.0"
+        },
+        "time": "2017-02-20 08:28:03",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Algolia\\Index\\": "src/",
+                "Algolia\\Index\\Tests\\": "tests/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Raymond RUTJES",
+                "email": "raymond.rutjes@gmail.com"
+            }
+        ],
+        "homepage": "https://github.com/algolia/php-index",
+        "support": {
+            "source": "https://github.com/algolia/php-index/tree/master",
+            "issues": "https://github.com/algolia/php-index/issues"
+        }
+    }
+]
