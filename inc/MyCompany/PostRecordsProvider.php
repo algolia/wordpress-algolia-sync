@@ -20,6 +20,13 @@ class PostRecordsProvider extends WpQueryRecordsProvider
      */
     public function getRecordsForPost(\WP_Post $post)
     {
+        global $sitepress;
+
+        $langInfo = wpml_get_language_information(null, $post->ID);
+
+        $current_lang = $sitepress->get_current_language(); //save current language
+        $sitepress->switch_lang($langInfo['language_code']);
+
         $user = get_userdata($post->post_author);
         if ($user instanceof \WP_User) {
             $user_data = array(
@@ -63,16 +70,12 @@ class PostRecordsProvider extends WpQueryRecordsProvider
             'post_type'           => $post->post_type,
             'post_mime_type'      => $post->post_mime_type,
             'permalink'           => get_permalink($post->ID),
-           /*
-            'terms'             => Todo,
-            'post_meta'         => Todo,
-            'date_terms'        => Todo,
-           */
             'comment_count'       => $comment_count,
             'comment_status'      => $comment_status,
             'ping_status'         => $ping_status,
             'menu_order'          => $menu_order,
             'guid'                => $post->guid,
+            'wpml'                => $langInfo,
             //'site_id'         => get_current_blog_id(),
         );
 
@@ -84,6 +87,8 @@ class PostRecordsProvider extends WpQueryRecordsProvider
         $tags = wp_get_post_tags($post->ID);
         $record['tags'] = wp_list_pluck($tags, 'name');
 
+        $sitepress->switch_lang($current_lang); //restore previous language
+
         return array($record);
     }
 
@@ -93,8 +98,9 @@ class PostRecordsProvider extends WpQueryRecordsProvider
     protected function getDefaultQueryArgs()
     {
         return array(
-            'post_type'   => 'post',
-            'post_status' => 'publish',
+            'post_type'        => 'post',
+            'post_status'      => 'publish',
+            'suppress_filters' => true
         );
     }
 

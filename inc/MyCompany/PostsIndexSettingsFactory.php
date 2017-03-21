@@ -30,6 +30,7 @@ class PostsIndexSettingsFactory
                 'attributesForFaceting' => array(
                     'tags',
                     'post_author',
+                    'wpml.language_code',
                 ),
                 'attributesToSnippet' => array(
                     'content:10',
