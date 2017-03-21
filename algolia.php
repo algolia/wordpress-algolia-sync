@@ -16,6 +16,10 @@ add_action(
             return;
         }
 
+        if(!defined('ALGOLIA_PREFIX')) {
+            define('ALGOLIA_PREFIX', 'prod_');
+        }
+
         // Composer dependencies.
         require_once 'libs/autoload.php';
 
@@ -35,9 +39,9 @@ add_action(
         // Register article index.
         $settings = new \WpAlgolia\MyCompany\PostsIndexSettingsFactory();
         $recordsProvider = new \WpAlgolia\MyCompany\PostRecordsProvider();
-        $index = new \WpAlgolia\PostsIndex('mycompany_posts', $algoliaClient, $settings->create(), $recordsProvider);
+        $index = new \WpAlgolia\PostsIndex(ALGOLIA_PREFIX . 'posts', $algoliaClient, $settings->create(), $recordsProvider);
         new \WpAlgolia\MyCompany\PostChangeListener($index);
-        $indexRepository->add('mycompany_posts', $index);
+        $indexRepository->add('posts', $index);
 
 
 
