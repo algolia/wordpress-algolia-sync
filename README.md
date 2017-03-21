@@ -6,6 +6,7 @@ WpAlgolia
 1. Extract the archive in a folder named `algolia` in the `wp-content/plugins` directory of your WordPress instance
 2. Enable the plugin from your admin Plugins page
 3. Add 2 constants to your wp-config.php file: `ALGOLIA_APPLICATION_ID` & `ALGOLIA_ADMIN_API_KEY`
+4. Add 1 constant to determine the environment prefix for your indices: `ALGOLIA_PREFIX`
  
 ## What is already provided
 
