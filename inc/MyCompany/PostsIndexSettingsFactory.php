@@ -22,7 +22,7 @@ class PostsIndexSettingsFactory
             array(
                 'searchableAttributes' => array(
                     'unordered(post_title)',
-                    'unordered(content)',
+                    'unordered(post_content)',
                 ),
                 'customRanking' => array(
                     'desc(post_date)',
