@@ -49,7 +49,7 @@ add_action(
         if (defined('WP_CLI') && WP_CLI) {
             require_once 'inc/Commands.php';
             $commands = new \WpAlgolia\Commands($indexRepository);
-            WP_CLI::add_command('algolia', $commands);
+            \WP_CLI::add_command('algolia', $commands);
         }
 
     }
