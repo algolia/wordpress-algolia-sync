@@ -37,7 +37,7 @@ class PostChangeListener
      */
     public function pushRecords($postId, $post)
     {
-        if (wp_is_post_autosave($post) || wp_get_post_revision($post)) {
+        if (wp_is_post_autosave($post) || wp_is_post_revision($post)) {
             return;
         }
 
